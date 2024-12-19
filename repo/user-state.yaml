@@ -2,12 +2,12 @@
 roles:
   readonly:
     rules:
-      - apiGroups: [""]
+      - apiGroups: ["core"]
         resources: ["pods", "services", "configmaps"]
         verbs: ["get", "list", "watch"]
   developer:
     rules:
-      - apiGroups: [""]
+      - apiGroups: ["core"]
         resources: ["pods", "services", "configmaps", "secrets"]
         verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
       - apiGroups: ["apps"]
