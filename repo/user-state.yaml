@@ -1,0 +1,34 @@
+---
+roles:
+  readonly:
+    rules:
+      - apiGroups: [""]
+        resources: ["pods", "services", "configmaps"]
+        verbs: ["get", "list", "watch"]
+  developer:
+    rules:
+      - apiGroups: [""]
+        resources: ["pods", "services", "configmaps", "secrets"]
+        verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+      - apiGroups: ["apps"]
+        resources: ["deployments", "statefulsets"]
+        verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  admin:
+    rules:
+      - apiGroups: ["*"]
+        resources: ["*"]
+        verbs: ["*"]
+
+namespaces:
+  dev:
+    description: "Development namespace"
+  staging:
+    description: "Staging namespace"
+  prod:
+    description: "Production namespace"
+
+users:
+  - username: john.doe
+    email: john.doe@company.com
+    role: developer
+    namespaces: ["dev"]
