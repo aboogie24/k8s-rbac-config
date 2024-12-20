@@ -31,4 +31,4 @@ users:
   - username: john.doe
     email: john.doe@company.com
     role: developer
-    namespaces: ["dev"]
+    namespaces: ["default"]
