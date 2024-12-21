@@ -36,3 +36,7 @@ users:
     email: alfred.brown@alfredbrowniii.io
     role: admin
     namespaces: ["default"]
+  - username: test.user
+    email: test.user@alfredbrowniii.io
+    role: admin
+    namespaces: ["default"]
